@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB</title>
+    <link rel="stylesheet" href="common_video.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav id="navbar" class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <a href="main.html" class="flex items-center">
+                    <img class="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/2942/2942065.png" alt="Ecademy Logo">
+                    <span class="ml-2 text-xl font-bold text-gray-800">Ecademy</span>
+                </a>
+                <div class="hidden sm:flex sm:ml-6 sm:space-x-8">
+                    <a href="main.html" id="home-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                    <a href="courses.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+                    <a href="faq.html" id="faq-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">FAQ</a>
+                </div>
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <a href="login.html" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500">Login</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<h2 align="center">MongoDB</h2>
+<div class="container">
+    <div class="main-content">
+        <div class="main-video">
+            <iframe width="800" height="450" src="https://www.youtube.com/embed/ExcRbA7fy_A?si=U9WPk_1hcPW-9i-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-list">
+            <div class="vid">
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/ExcRbA7fy_A?si=U9WPk_1hcPW-9i-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3 class="title">What is MongoDB</h3>
+            </div>
+            <div class="vid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gDOKSgqM-bQ?si=IuKOLW0wS2G83c7T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3 class="title">Installation</h3>
+            </div>
+            <div class="vid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ojKJqNQYaOI?si=lQgF1ZNjuiXlT0N0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3 class="title">Collections and Documents</h3>
+            </div>
+            <div class="vid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bJSj1a84I20?si=INtIQHq23T2MsSRN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3 class="title">Using MongoDB Compass</h3>
+            </div>
+            <div class="vid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jR49YGYXdxc?si=BZguXZNS6TEZS-wE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3 class="title">Using The MongoDB Shell</h3>
+            </div>
+        </div>
+    </div>
+    <div class="quiz-button">
+        <a href="mongodb_video_quiz.html" class="btn">Go to Quiz</a>
+    </div>
+</div>
+<footer class="bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="contact-info">
+            <p class="text-sm text-gray-600">Email: <a href="mailto:support@ecademy.com" class="text-blue-600">support@ecademy.com</a></p>
+            <p class="text-sm text-gray-600">Phone: +91 9819384868</p>
+        </div>
+        <div class="mt-4">
+            <p class="text-xs text-gray-500">&copy; 2024 Ecademy. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<script>
+    const mainVideo = document.querySelector('.main-video iframe');
+    const videoList = document.querySelectorAll('.video-list .vid');
+
+    videoList.forEach(video => {
+        video.onclick = () => {
+            videoList.forEach(vid => vid.classList.remove('active'));
+            video.classList.add('active');
+            const iframe = video.querySelector('iframe');
+            if (iframe) {
+                mainVideo.src = iframe.src;
+            } else {
+                const videoSrc = video.querySelector('video').src;
+                mainVideo.src = videoSrc;
+            }
+        };
+    });
+</script>
+</body>
+</html>
