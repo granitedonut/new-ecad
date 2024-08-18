@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Programming</title>
+    <link rel="stylesheet" href="common_video.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav id="navbar" class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <a href="main.html" class="flex items-center">
+                    <img class="h-8 w-8" src="https://cdn-icons-png.flaticon.com/512/2942/2942065.png" alt="Ecademy Logo">
+                    <span class="ml-2 text-xl font-bold text-gray-800">Ecademy</span>
+                </a>
+                <div class="hidden sm:flex sm:ml-6 sm:space-x-8">
+                    <a href="main.html" id="home-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
+                    <a href="courses.html" id="courses-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">Courses</a>
+                    <a href="faq.html" id="faq-link" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700">FAQ</a>
+                </div>
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                <a href="login.html" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500">Login</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<h2 align="center">Flutter</h2>
+<div class="container">
+    <div class="main-content">
+        <div class="main-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1ukSR1GRtMU?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-list">
+            <div class="vid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1ukSR1GRtMU?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title">Introduction</h3>
+            </div>
+            <div class="vid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bKueYVtV0eA?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title">Overview</h3>
+            </div>
+            <div class="vid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FLQ-Vhw1NYQ?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title">Dart Primer</h3>
+            </div>
+            <div class="vid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TSIhiZ5jRB0?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title">Creating an App</h3>
+            </div>
+            <div class="vid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/C5lpPjoivaw?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title">Scaffold Widget</h3>
+            </div>
+        </div>
+    </div>
+    <div class="quiz-button">
+        <a href="flutter_video_quiz.html" class="btn">Go to Quiz</a>
+    </div>
+</div>
+</footer>
+<script>
+    const mainVideo = document.querySelector('.main-video iframe');
+    const videoList = document.querySelectorAll('.video-list .vid');
+
+    videoList.forEach(video => {
+        video.onclick = () => {
+            videoList.forEach(vid => vid.classList.remove('active'));
+            video.classList.add('active');
+            const iframe = video.querySelector('iframe');
+            if (iframe) {
+                mainVideo.src = iframe.src;
+            } else {
+                const videoSrc = video.querySelector('video').src;
+                mainVideo.src = videoSrc;
+            }
+        };
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
